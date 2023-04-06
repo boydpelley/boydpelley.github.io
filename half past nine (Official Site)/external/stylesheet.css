@@ -1,0 +1,492 @@
+/* --------------------
+    general CSS
+--------------------- */
+
+/* Have each of the colors a variable that can be modified by Javascript */
+:root {
+    --main-background: #333333;
+    --border-c: #E72219;
+    --div-background: #A60303;
+}
+
+body  {
+    background-color: var(--main-background);
+}
+
+img {
+    border-color: var(--border-c);
+}
+
+.backgrounded {
+    background-color: var(--div-background);
+}
+
+#colour-changer {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+#colour-changer button {
+    color: #333333;
+    margin: 5px;
+}
+
+@font-face {
+    font-family: poppins-light;
+    src: url('../external/Poppins-Light.ttf');
+}
+
+* {
+    font-family: 'poppins-light', sans-serif;
+    color: #F2EFE9;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+nav > a {
+    float: left;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #F2EFE9;
+    padding: 5px 0;
+    margin: 10px 0;
+}
+
+@media screen and (min-width: 1000px) {
+    nav > a:hover {
+        color: #333333;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    nav > a {
+        font-size: 150%;
+        outline: #F2EFE9 solid 5px;
+    }
+
+    #colour-changer {
+        font-size: 3.5vw;
+    }
+
+    #colour-changer button {
+        font-size: 2vw;
+    }
+
+    p, h5, h4, span {
+        font-size: 3.5vw;
+    }
+
+    input, textarea {
+        width: 30vw;
+        height: 3vh;
+    }
+}
+
+
+/* --------------------
+    index.html
+--------------------- */
+
+#index {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.header-frontpage {
+    background: url('../photos/jester_performing.jpg');
+    width: 100%;
+    height: 100%;
+    min-width: auto;
+    max-width: 100vw;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 50%;
+    
+}
+
+.header-to-blur {
+    padding-bottom: 1em;
+    backdrop-filter: blur(2px);
+}
+
+#top-title {
+    margin-top: 0px;
+    font-weight: bold;
+    color: #F2EFE9;
+}
+
+#who-we-are {
+    max-width: 70%;
+    margin: auto;
+}
+
+@media screen and (min-width: 1000px) {
+    #each-member {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "ethan boyd"
+            "nolan cam";
+        gap: 15px 10px;
+    }
+    
+    #ethan-about { grid-area: ethan; }
+    #boyd-about { grid-area: boyd; }
+    #nolan-about { grid-area: nolan; }
+    #cam-about { grid-area: cam; }
+}
+
+
+.member {
+    display: flex;
+}
+
+.member img {
+    object-fit: cover;
+    margin: 10px;
+    display: block;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "eb eg"
+        "sh eg";
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#ethan-guitar { grid-area: eg; }
+#shitcasters { grid-area: sh; }
+#boyd-ethan { grid-area: eb; }
+
+.col1 {
+    border-style: solid;
+    border-width: 5px;
+}
+
+.col2 {
+    border-style: solid;
+    border-width: 10px 5px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    #who-we-are {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #gallery {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col1 {
+        width: 95vw;
+        height: auto;
+    }
+
+    .col2 {
+        width: 45vw;
+        height: auto;
+    }
+
+    .member img {
+        width: 20vw;
+        height: auto;
+    }
+}
+
+
+/* --------------------
+    originals.html
+--------------------- */
+
+#originals-container {
+    max-width: 85%;
+    margin: auto;
+}
+
+.song-text-left {
+    display: flex;
+}
+
+.song-text-left .photo-and-player {
+    margin: 10px;
+    float: right;
+}
+
+.song-text-right {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.song-text-right .photo-and-player {
+    margin: 10px;
+}
+
+.single-cover {
+    border-style: solid;
+    border-width: 5px;
+    margin: 5px;
+    padding: 1px;
+}
+
+.originals-text > p {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    vertical-align: middle;
+}
+
+h5 {
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    #originals-container img, audio {
+        width: 40vw;
+    }
+}
+
+/* --------------------
+    performances.html
+--------------------- */
+
+#performances {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px;
+}
+
+#under-the-underground {
+    display: flex;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+#photo-under {
+    text-align: center;
+    flex-shrink: 2;
+    width: 100%;
+}
+
+#photo-under img {
+    border-style: solid;
+    border-width: 3px;
+}
+
+#songs-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+@media screen and (min-width: 1000px) {
+    #under-the-underground video {
+        display: flex;
+        width: 100%;
+        min-width: 0px;
+    }
+}
+
+#songs-container > div {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+    padding: 10px;
+    flex-shrink: 1;
+}
+
+#live-at-rhs {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#live-at-rhs > h3 {
+    flex: 20%;
+    text-align: center;
+}
+
+#live-at-rhs > p {
+    flex: 60%;
+}
+
+#live-at-rhs > iframe {
+    flex: 20%;
+}
+
+@media screen and (max-width: 1000px) {
+    #under-the-underground {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    video {
+        width: 40vw;
+        min-width: none;
+    }
+
+    #live-at-rhs {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+#future {
+    text-align: center;
+}
+
+span:first-of-type + p {
+    font-weight: bold;
+}
+
+/* --------------------
+    our gear.html
+--------------------- */
+
+#png-pedals, #the-bands-gear {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+table, tr, td {
+    border: 3px solid;
+    border-collapse: collapse;
+}
+
+td > h4 {
+    text-align: center;
+}
+
+ul li, ol li {
+    list-style-type: none;
+}
+
+ul > li::first-line {
+    font-weight: bold;
+}
+
+.parent-list::first-line {
+    color: #a7e79f;
+}
+
+#end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 1000px) {
+    li {
+        font-size: 3.5vw;
+    }
+}
+
+/* --------------------
+    socials.html
+--------------------- */
+
+#socials-content {
+    margin: 0px 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+input ~ label, textarea ~ label {
+    margin: 5px;
+    float: left;
+}
+
+#form-wrapper, #ethan-wrapper {
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+}
+
+#instagram-wrapper {
+    border-radius: 10px;
+    padding: 15px 45px;
+    margin: 10px;
+}
+
+#ethan-glasses {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#instagram {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+[type|="submit"] {
+    color: #0f1226;
+}
+
+input, textarea {
+    color: #0f1226;
+}
+
+h4 > a {
+    color: #b13fcb;
+}
+
+#bottom-of-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+    #socials-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
